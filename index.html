@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khartes Madrid | Medallas religiosas artesanales hechas a mano en España</title>
+<meta name="description" content="Medallas religiosas artesanales hechas a mano en España. Diseñadas en Madrid por dos hermanas, con perlas y piedras naturales. Cadena incluida en cada medalla.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2A211B;
+    --ink-soft:#5B4F44;
+    --paper:#FBF6EF;
+    --paper-dim:#F1E9DB;
+    --surface:#FFFFFF;
+    --gold:#A9822F;
+    --gold-deep:#8A6A22;
+    --burgundy:#7A2331;
+    --line:#E6DCC8;
+    --muted:#8A7F71;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost',sans-serif;
+    color:var(--ink-soft);
+    background:var(--paper);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand-word{font-family:'Cormorant Garamond',serif;color:var(--ink);}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold-deep);margin-bottom:18px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--gold);}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 28px;border-radius:999px;
+    font-family:'Jost';font-weight:500;font-size:14.5px;letter-spacing:.02em;white-space:nowrap;
+    border:1px solid transparent;cursor:pointer;transition:transform .15s ease, opacity .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--ink);color:var(--paper);}
+  .btn-primary:hover{opacity:.88;}
+  .btn-ghost{border-color:var(--ink-soft);color:var(--ink);}
+  .btn-gold{background:var(--gold);color:#2A210C;}
+  .btn-gold:hover{background:var(--gold-deep);}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:color-mix(in srgb, var(--paper) 86%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1140px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand img{height:30px;width:auto;}
+  .nav-links{display:none;gap:32px;font-size:14.5px;}
+  .nav-links a{opacity:.75;transition:opacity .15s;}
+  .nav-links a:hover{opacity:1;color:var(--gold-deep);}
+  @media(min-width:860px){.nav-links{display:flex;}}
+  .nav-cta{display:none;}
+  @media(min-width:640px){.nav-cta{display:inline-flex;}}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;padding:56px 0 60px;}
+  .hero-grid{display:grid;gap:52px;align-items:center;}
+  @media(min-width:900px){.hero-grid{grid-template-columns:1fr .82fr;}}
+  h1{font-weight:600;font-size:clamp(34px,5vw,54px);line-height:1.08;letter-spacing:-.01em;margin-bottom:20px;}
+  h1 em{font-style:italic;font-weight:600;color:var(--gold-deep);}
+  .hero p.lead{font-size:17.5px;color:var(--muted);max-width:44ch;margin-bottom:30px;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
+
+  .hero-visual{position:relative;aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;background:var(--ink);}
+  .hero-visual img{width:100%;height:100%;object-fit:cover;}
+  .hero-visual .swatch{
+    position:absolute;bottom:18px;left:18px;right:18px;
+    background:var(--surface);border-radius:14px;padding:16px 18px;
+    display:flex;justify-content:space-between;align-items:flex-end;gap:12px;
+    box-shadow:0 20px 40px -16px rgba(0,0,0,.45);
+  }
+  .swatch .tag{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px;}
+  .swatch .big{font-family:'Cormorant Garamond';font-weight:600;font-size:16px;color:var(--ink);}
+  .swatch .mark{font-family:'Cormorant Garamond';font-style:italic;font-size:22px;color:var(--gold-deep);}
+
+  /* Sections */
+  section{padding:76px 0;}
+  .section-head{max-width:620px;margin:0 auto 46px;}
+  .section-head.center{text-align:center;margin-left:auto;margin-right:auto;}
+  h2{font-size:clamp(26px,3.4vw,38px);font-weight:600;letter-spacing:-.01em;}
+  .section-head p{color:var(--muted);margin-top:12px;font-size:16px;}
+
+  /* Trust strip */
+  .trust-strip{padding:38px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .trust-row{display:grid;gap:28px;grid-template-columns:1fr;text-align:center;}
+  @media(min-width:640px){.trust-row{grid-template-columns:repeat(3,1fr);}}
+  .trust i{font-family:'Cormorant Garamond';font-style:italic;font-size:26px;color:var(--gold-deep);display:block;margin-bottom:8px;}
+  .trust strong{display:block;font-family:'Cormorant Garamond';font-weight:600;font-size:18px;color:var(--ink);margin-bottom:4px;}
+  .trust span{font-size:14px;color:var(--muted);}
+
+  /* Product grid */
+  .product-grid{display:grid;gap:22px;grid-template-columns:repeat(2,1fr);}
+  @media(min-width:720px){.product-grid{grid-template-columns:repeat(3,1fr);}}
+  .p-card figure{border-radius:14px;overflow:hidden;aspect-ratio:4/5;background:var(--paper-dim);margin-bottom:14px;}
+  .p-card img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+  .p-card:hover img{transform:scale(1.045);}
+  .p-card h3{font-size:16.5px;font-weight:600;line-height:1.3;margin-bottom:4px;}
+  .p-card .price{font-size:14px;color:var(--gold-deep);font-weight:500;}
+  .p-card .go{font-size:13px;color:var(--muted);margin-top:6px;display:inline-block;}
+  .p-card:hover .go{color:var(--gold-deep);}
+  .grid-foot{margin-top:36px;text-align:center;}
+
+  /* Story - dark */
+  .story{background:var(--ink);color:var(--paper-dim);}
+  .story .eyebrow{color:var(--gold);}
+  .story .eyebrow::before{background:var(--gold);}
+  .story h2{color:var(--paper);}
+  .story-grid{display:grid;gap:40px;align-items:start;}
+  @media(min-width:860px){.story-grid{grid-template-columns:1fr 1fr;}}
+  .story p.big{font-size:19px;color:var(--paper-dim);max-width:46ch;}
+  .story-points{display:flex;flex-direction:column;gap:22px;}
+  .story-point{border-top:1px solid color-mix(in srgb, var(--paper) 18%, transparent);padding-top:18px;}
+  .story-point h3{color:var(--paper);font-size:17px;margin-bottom:4px;}
+  .story-point p{font-size:14px;color:var(--ink-soft);}
+
+  /* Collection band */
+  .band{
+    background:linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+    color:#2A210C;border-radius:28px;padding:56px 40px;text-align:center;
+    margin:0 24px;
+  }
+  .band h2{color:inherit;}
+  .band p{opacity:.85;margin:14px auto 28px;max-width:52ch;font-size:16px;}
+  .band .btn-primary{background:#2A210C;color:var(--paper);}
+
+  /* Blog */
+  .blog-grid{display:grid;gap:24px;grid-template-columns:1fr;}
+  @media(min-width:720px){.blog-grid{grid-template-columns:repeat(3,1fr);}}
+  .b-card figure{border-radius:14px;overflow:hidden;aspect-ratio:16/11;background:var(--paper-dim);margin-bottom:14px;}
+  .b-card img{width:100%;height:100%;object-fit:cover;}
+  .b-card h3{font-size:18px;font-weight:600;line-height:1.32;margin-bottom:8px;}
+  .b-card .go{font-size:13.5px;color:var(--gold-deep);}
+
+  footer{padding:48px 0 36px;border-top:1px solid var(--line);}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center;}
+  .foot-links{display:flex;gap:22px;font-size:14px;color:var(--muted);}
+  .foot-note{font-size:12.5px;color:var(--muted);margin-top:26px;text-align:center;font-style:italic;line-height:1.6;}
+
+  .ig-float{
+    position:fixed;bottom:22px;right:22px;z-index:60;
+    width:54px;height:54px;border-radius:50%;
+    background:var(--ink);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 24px -6px rgba(0,0,0,.35);
+  }
+  .ig-float svg{width:24px;height:24px;stroke:var(--paper);}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="brand" href="#top">
+      <img src="https://khartesmadrid.com/cdn/shop/files/1_1_49af28da-7fe3-45ca-b87f-cc5c2ee92907_1000x.png?v=1619725090" alt="Khartes Madrid">
+    </a>
+    <div class="nav-links">
+      <a href="#coleccion">Colección</a>
+      <a href="#historia">Por qué Khartes</a>
+      <a href="#blog">Blog</a>
+      <a href="https://www.instagram.com/khartesmadrid/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="https://khartesmadrid.com/collections/all" target="_blank" rel="noopener">Ver la colección</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Hecho a mano en España</div>
+      <h1>Medallas religiosas artesanales, <em>pensadas para durar toda una vida</em></h1>
+      <p class="lead">Diseñadas en Madrid y fabricadas a mano por dos hermanas, con perlas y piedras naturales. Cada medalla llega con su cadena, lista para llevar o para regalar.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://khartesmadrid.com/collections/all" target="_blank" rel="noopener">Ver la colección</a>
+        <a class="btn btn-ghost" href="#historia">Nuestra historia</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="https://khartesmadrid.com/cdn/shop/files/WhatsApp_Image_2024-11-10_at_15.47.35_1600x.jpg?v=1731250189" alt="Medalla de la Virgen del Carmen con perlas naturales, Khartes Madrid" loading="eager">
+      <div class="swatch">
+        <div>
+          <span class="tag">Detalle</span>
+          <span class="big">Perlas naturales + baño de oro 18K</span>
+        </div>
+        <span class="mark">K</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="wrap trust-row">
+    <div class="trust">
+      <i>✦</i>
+      <strong>Hecho a mano en España</strong>
+      <span>Diseñada en Madrid y fabricada a mano, con perlas y piedras naturales.</span>
+    </div>
+    <div class="trust">
+      <i>✦</i>
+      <strong>Cadena incluida</strong>
+      <span>40 cm + 5 cm de alargador, lista para llevar o para regalar.</span>
+    </div>
+    <div class="trust">
+      <i>✦</i>
+      <strong>Envío gratis desde 65€</strong>
+      <span>A Península y Baleares en todos los pedidos a partir de 65€.</span>
+    </div>
+  </div>
+</section>
+
+<section id="coleccion">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Lo más vendido</div>
+      <h2>Las medallas que más eligen para regalar y regalarse</h2>
+      <p>Una selección de las piezas favoritas de la colección, todas con cadena incluida.</p>
+    </div>
+    <div class="product-grid">
+      <a class="p-card" href="https://khartesmadrid.com/products/virgen-del-carmen-con-perlas-naturales" target="_blank" rel="noopener">
+        <figure><img src="https://khartesmadrid.com/cdn/shop/files/WhatsApp_Image_2024-11-10_at_15.47.35_1200x.jpg?v=1731250189" alt="Medalla de la Virgen del Carmen con perlas naturales" loading="lazy"></figure>
+        <h3>Medalla de la Virgen del Carmen con perlas naturales</h3>
+        <span class="price">69,00 €</span><br>
+        <span class="go">Ver medalla →</span>
+      </a>
+      <a class="p-card" href="https://khartesmadrid.com/products/medalla-de-la-virgen-del-pilar-perla-natural" target="_blank" rel="noopener">
+        <figure><img src="https://khartesmadrid.com/cdn/shop/files/WhatsApp_Image_2024-12-31_at_19.44.15_1200x.jpg?v=1737450612" alt="Medalla de la Virgen del Pilar con perla natural" loading="lazy"></figure>
+        <h3>Medalla de la Virgen del Pilar con perla natural</h3>
+        <span class="price">69,00 €</span><br>
+        <span class="go">Ver medalla →</span>
+      </a>
+      <a class="p-card" href="https://khartesmadrid.com/products/medalla-de-la-milagrosa-perla" target="_blank" rel="noopener">
+        <figure><img src="https://khartesmadrid.com/cdn/shop/files/WhatsApp_Image_2024-08-30_at_17.15.29_1200x.jpg?v=1725036088" alt="Medalla de La Milagrosa con perla natural" loading="lazy"></figure>
+        <h3>Medalla de La Milagrosa con perla natural</h3>
+        <span class="price">69,00 €</span><br>
+        <span class="go">Ver medalla →</span>
+      </a>
+      <a class="p-card" href="https://khartesmadrid.com/products/medalla-de-la-virgen-del-pilar-con-rubi-y-zafiro" target="_blank" rel="noopener">
+        <figure><img src="https://khartesmadrid.com/cdn/shop/files/WhatsApp_Image_2024-12-31_at_19.44.27_1200x.jpg?v=1737450646" alt="Medalla de la Virgen del Pilar con rubí y zafiro" loading="lazy"></figure>
+        <h3>Medalla de la Virgen del Pilar con rubí y zafiro</h3>
+        <span class="price">69,00 €</span><br>
+        <span class="go">Ver medalla →</span>
+      </a>
+      <a class="p-card" href="https://khartesmadrid.com/products/medalla-sagrado-corazon" target="_blank" rel="noopener">
+        <figure><img src="https://khartesmadrid.com/cdn/shop/products/WhatsAppImage2023-03-14at14.38.08_2_1200x.jpg?v=1678801158" alt="Medalla Sagrado Corazón de Jesús con esmalte y lapislázuli" loading="lazy"></figure>
+        <h3>Medalla Sagrado Corazón de Jesús con esmalte y lapislázuli</h3>
+        <span class="price">65,00 €</span><br>
+        <span class="go">Ver medalla →</span>
+      </a>
+      <a class="p-card" href="https://khartesmadrid.com/products/medalla-san-antonio-con-perla-natural" target="_blank" rel="noopener">
+        <figure><img src="https://khartesmadrid.com/cdn/shop/files/WhatsAppImage2023-09-08at18.21.39_1200x.jpg?v=1694195534" alt="Medalla de San Antonio con perla natural" loading="lazy"></figure>
+        <h3>Medalla de San Antonio con perla natural</h3>
+        <span class="price">Desde 69,00 €</span><br>
+        <span class="go">Ver medalla →</span>
+      </a>
+    </div>
+    <div class="grid-foot">
+      <a class="btn btn-ghost" href="https://khartesmadrid.com/collections/all" target="_blank" rel="noopener">Ver toda la colección</a>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="historia">
+  <div class="wrap">
+    <div class="eyebrow">Nuestra historia</div>
+    <div class="story-grid">
+      <div>
+        <h2>Joyería religiosa con un toque distinto</h2>
+        <p class="big" style="margin-top:16px;">Diseñada y fabricada en España por dos hermanas. Medallas, collares, pendientes y pulseras para el día a día, con una esencia única — joyería devocional pensada para acompañarte, no solo para guardarse en un cajón.</p>
+      </div>
+      <div class="story-points">
+        <div class="story-point">
+          <h3>Perlas y piedras naturales</h3>
+          <p>Cada medalla combina el oro con perlas, olivinos, rubíes o zafiros naturales — nunca imitaciones.</p>
+        </div>
+        <div class="story-point">
+          <h3>Producción artesanal, en pequeños lotes</h3>
+          <p>Fabricadas a mano en España, no en una línea de producción en serie.</p>
+        </div>
+        <div class="story-point">
+          <h3>Diseño propio</h3>
+          <p>Cada pieza nace de un diseño propio de Khartes, pensado en Madrid.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="band">
+    <div class="wrap" style="padding:0;">
+      <h2>Toda la colección de medallas artesanales</h2>
+      <p>Vírgenes, santos y escapularios trabajados a mano en oro, con perlas y piedras naturales. Encuentra la medalla para cada historia y cada regalo.</p>
+      <a class="btn btn-primary" href="https://khartesmadrid.com/collections/all" target="_blank" rel="noopener">Ver todas las medallas</a>
+    </div>
+  </div>
+</section>
+
+<section id="blog">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Del blog</div>
+      <h2>Historia y significado detrás de cada devoción</h2>
+      <p>Para elegir con sentido antes de regalar una medalla.</p>
+    </div>
+    <div class="blog-grid">
+      <a class="b-card" href="https://khartesmadrid.com/blogs/khartes-blog/virgen-del-carmen-historia-escapulario-medalla" target="_blank" rel="noopener">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0562/0442/7431/articles/virgen-del-carmen-isabel-de-santiago.jpg?v=1790398507" alt="Virgen del Carmen, Isabel de Santiago" loading="lazy"></figure>
+        <h3>Virgen del Carmen: historia, el escapulario y por qué regalar su medalla</h3>
+        <span class="go">Leer artículo →</span>
+      </a>
+      <a class="b-card" href="https://khartesmadrid.com/blogs/khartes-blog/significado-medalla-de-san-benito" target="_blank" rel="noopener">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0562/0442/7431/articles/san-benito-juan-rizi.jpg?v=1790398511" alt="San Benito, Juan Rizi" loading="lazy"></figure>
+        <h3>Significado de la medalla de San Benito: símbolos e iniciales</h3>
+        <span class="go">Leer artículo →</span>
+      </a>
+      <a class="b-card" href="https://khartesmadrid.com/blogs/khartes-blog/historia-medalla-milagrosa" target="_blank" rel="noopener">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0562/0442/7431/articles/santa-catalina-laboure.jpg?v=1790398509" alt="Santa Catalina Labouré" loading="lazy"></figure>
+        <h3>Historia de la Medalla Milagrosa y el significado de su diseño</h3>
+        <span class="go">Leer artículo →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <a class="brand" href="#top">
+        <img src="https://khartesmadrid.com/cdn/shop/files/1_1_49af28da-7fe3-45ca-b87f-cc5c2ee92907_1000x.png?v=1619725090" alt="Khartes Madrid" style="height:26px;">
+      </a>
+      <div class="foot-links">
+        <a href="https://www.instagram.com/khartesmadrid/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://khartesmadrid.com/" target="_blank" rel="noopener">Ver tienda actual</a>
+        <a href="#coleccion">Colección</a>
+      </div>
+    </div>
+    <p class="foot-note">Esta página es un concepto de rediseño elaborado por Renueva Smart a partir del contenido real de Khartes Madrid (productos, precios, fotos y textos de khartesmadrid.com), a modo de propuesta. No es el sitio oficial de la marca ni sustituye a la tienda real — los enlaces de compra llevan a khartesmadrid.com.</p>
+  </div>
+</footer>
+
+<a class="ig-float" href="https://www.instagram.com/khartesmadrid/" target="_blank" rel="noopener" aria-label="Instagram de Khartes Madrid">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>
+</a>
+
+</body>
+</html>
