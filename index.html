@@ -81,9 +81,9 @@
   .hero p.lead{font-size:17.5px;color:var(--muted);max-width:44ch;margin-bottom:30px;}
   .hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
 
-  .hero-copy{position:relative;isolation:isolate;border-radius:var(--radius);overflow:hidden;padding:36px 32px;margin:-36px -32px;}
-  .hero-copy video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
-  .hero-copy::before{content:"";position:absolute;inset:0;background:color-mix(in srgb, var(--paper) 80%, transparent);z-index:-1;}
+  h1.h1-video{position:relative;isolation:isolate;border-radius:14px;overflow:hidden;padding:22px 26px;margin:-22px -26px 20px;}
+  h1.h1-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
+  h1.h1-video::before{content:"";position:absolute;inset:0;background:color-mix(in srgb, var(--paper) 72%, transparent);z-index:-1;}
 
   .hero-visual{position:relative;aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;background:var(--ink);}
   .hero-visual img{width:100%;height:100%;object-fit:cover;}
@@ -189,11 +189,13 @@
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <video autoplay muted loop playsinline preload="auto" aria-hidden="true">
-        <source src="assets/hero-bg.mp4" type="video/mp4">
-      </video>
       <div class="eyebrow">Hecho a mano en España</div>
-      <h1>Medallas religiosas artesanales, <em>pensadas para durar toda una vida</em></h1>
+      <h1 class="h1-video">
+        <video autoplay muted loop playsinline preload="auto" aria-hidden="true">
+          <source src="assets/hero-bg.mp4" type="video/mp4">
+        </video>
+        Medallas religiosas artesanales, <em>pensadas para durar toda una vida</em>
+      </h1>
       <p class="lead">Diseñadas en Madrid y fabricadas a mano por dos hermanas, con perlas y piedras naturales. Cada medalla llega con su cadena, lista para llevar o para regalar.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://khartesmadrid.com/collections/all" target="_blank" rel="noopener">Ver la colección</a>
@@ -368,7 +370,7 @@
 </a>
 
 <script>
-  var heroVideo = document.querySelector('.hero-copy video');
+  var heroVideo = document.querySelector('.h1-video video');
   if(heroVideo){
     heroVideo.playbackRate = 0.55;
     heroVideo.addEventListener('loadedmetadata', function(){ heroVideo.playbackRate = 0.55; });
