@@ -81,6 +81,10 @@
   .hero p.lead{font-size:17.5px;color:var(--muted);max-width:44ch;margin-bottom:30px;}
   .hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
 
+  .hero-copy{position:relative;isolation:isolate;border-radius:var(--radius);overflow:hidden;padding:36px 32px;margin:-36px -32px;}
+  .hero-copy video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
+  .hero-copy::before{content:"";position:absolute;inset:0;background:color-mix(in srgb, var(--paper) 80%, transparent);z-index:-1;}
+
   .hero-visual{position:relative;aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;background:var(--ink);}
   .hero-visual img{width:100%;height:100%;object-fit:cover;}
   .hero-visual .swatch{
@@ -184,7 +188,10 @@
 
 <section class="hero" id="top">
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-copy">
+      <video autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="assets/hero-bg.mp4" type="video/mp4">
+      </video>
       <div class="eyebrow">Hecho a mano en España</div>
       <h1>Medallas religiosas artesanales, <em>pensadas para durar toda una vida</em></h1>
       <p class="lead">Diseñadas en Madrid y fabricadas a mano por dos hermanas, con perlas y piedras naturales. Cada medalla llega con su cadena, lista para llevar o para regalar.</p>
@@ -359,6 +366,15 @@
 <a class="ig-float" href="https://www.instagram.com/khartesmadrid/" target="_blank" rel="noopener" aria-label="Instagram de Khartes Madrid">
   <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>
 </a>
+
+<script>
+  var heroVideo = document.querySelector('.hero-copy video');
+  if(heroVideo){
+    heroVideo.playbackRate = 0.55;
+    heroVideo.addEventListener('loadedmetadata', function(){ heroVideo.playbackRate = 0.55; });
+    heroVideo.addEventListener('play', function(){ heroVideo.playbackRate = 0.55; });
+  }
+</script>
 
 </body>
 </html>
